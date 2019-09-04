@@ -1,19 +1,49 @@
 {
   "name": "rest-node-ts-boilerplate",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "description": "A REST nodeJs boilerplate.",
-  "author": "Himanshu Kansal",
-  "main": "app.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "build": "tsc",
+    "start": "nodemon ./dist/bin/www",
+    "dev": "nodemon --exec ts-node -- ./src/bin/www",
+    "prod": "npm run build && npm run start",
+    "clean": "rm -rf node_modules coverage dist .nyc_output",
+    "lint": "tslint -t stylish --project \"tsconfig.json\""
   },
+  "keywords": [
+    "NodeJs",
+    "Express",
+    "TsLint",
+    "MongoDB",
+    "Typescript"
+  ],
+  "author": "Himanshu Kansal",
+  "license": "MIT",
   "dependencies": {
-    "cookie-parser": "~1.4.4",
+    "bcrypt": "^3.0.0",
+    "body-parser": "^1.18.3",
+    "copyfiles": "^2.1.1",
+    "cors": "^2.8.4",
     "debug": "~2.6.9",
+    "dotenv": "^6.0.0",
     "express": "~4.16.1",
     "helmet": "^3.21.0",
     "http-errors": "~1.6.3",
+    "http-status": "^1.2.0",
+    "jwt-then": "^1.0.1",
+    "mongoose": "^5.2.15",
     "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^4.0.3",
+    "@types/express": "^4.16.0",
+    "@types/node": "^10.9.4",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.4",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "^3.0.3"
   }
 }
