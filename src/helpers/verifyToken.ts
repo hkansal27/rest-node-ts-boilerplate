@@ -1,5 +1,6 @@
 import * as jwt from 'jwt-then';
 import config from '../config/config';
+
 const verifyToken = async (req, res, next): Promise<any> => {
   // check header or url parameters or post parameters for token
   const token: string = req.headers.authorization.split(' ')[1];

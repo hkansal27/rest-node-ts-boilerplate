@@ -5,6 +5,7 @@
 import app from '../app';
 import debugModule from "debug";
 import * as http from "http";
+import '../config/db';
 
 var debug = debugModule("rest-node-ts-boilerplate:server");
 
@@ -13,7 +14,6 @@ var debug = debugModule("rest-node-ts-boilerplate:server");
  */
 
 var port = normalizePort(process.env.PORT || "3000");
-// app.set("port", port);
 
 /**
  * Create HTTP server.
