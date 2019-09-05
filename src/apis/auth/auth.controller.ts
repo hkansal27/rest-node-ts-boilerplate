@@ -58,7 +58,6 @@ export default class UserController {
       res.status(201).send({
         success: false,
         message: 'User Successfully created',
-        data: newUser
       });
     } catch (err) {
       res.status(500).send({
