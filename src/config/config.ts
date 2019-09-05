@@ -1,5 +1,15 @@
 import * as dotenv from "dotenv";
-dotenv.config();
+
+let path;
+switch (process.env.NODE_ENV) {
+  case "production":
+    path = `${__dirname}/../environment/.env.production`;
+    break;
+  default:
+    path = `${__dirname}/../environment/.env.development`;
+}
+
+dotenv.config({ path: path });
 
 let config = {
   development: {
@@ -30,4 +40,4 @@ let config = {
   }
 };
 
-export default config[process.env.NODE_ENV || 'development'];
+export default config[process.env.NODE_ENV || "development"];

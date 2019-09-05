@@ -4,12 +4,13 @@
   "private": true,
   "description": "A REST nodeJs boilerplate.",
   "scripts": {
-    "build": "tsc && copyfiles -u 1 src/.env dist/",
+    "build": " npm run clean && tsc && npm run env",
     "start": "cross-env NODE_ENV=production nodemon ./dist/bin/www",
     "dev": "cross-env NODE_ENV=development nodemon --exec ts-node -- ./src/bin/www",
     "prod": "npm run build && npm run start",
-    "clean": "rm -rf node_modules coverage dist .nyc_output",
-    "lint": "tslint -t stylish --project \"tsconfig.json\""
+    "clean": "rmdir /s /q dist",
+    "lint": "tslint -t stylish -${}-project \"tsconfig.json\"",
+    "env": "copyfiles -u 1 src/environment/.env.production dist/ && copyfiles -u 1 src/environment/.env.development dist/"
   },
   "keywords": [
     "NodeJs",
