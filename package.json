@@ -22,7 +22,7 @@
   "author": "Himanshu Kansal",
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "^3.0.0",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.18.3",
     "copyfiles": "^2.1.1",
     "cors": "^2.8.4",
